@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiệm Nail & Spa - Chăm Sóc Móng và Gội Đầu Thảo Dược</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            color: #000000;
+            padding: 40px 5%;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Hình nền làm mờ chuyên biệt */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* BẠN THAY TÊN FILE ẢNH HOẶC LINK ẢNH NỀN Ở ĐÂY */
+            background-image: url('bia.jpeg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: blur(5px); /* Độ mờ của ảnh nền (15px) */
+            transform: scale(1.05); /* Tránh vệt sáng ở viền khi mờ */
+            z-index: -2;
+        }
+
+        /* Lớp phủ màu xanh mạ trong suốt để giữ tone gốc và làm nổi bật chữ */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(197, 244, 135, 0.35); /* Màu xanh mạ gốc #c5f487 hiển thị 65% */
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Top Header Area */
+        .header-section {
+            width: 100%;
+            margin-bottom: 30px;
+            display: table;
+        }
+
+        .brand-title {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        .brand-title h1 {
+            font-size: 54px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffffff; /* <--- THÊM DÒNG NÀY ĐỂ ĐỔI DÒNG "Tiệm Nail & Spa" SANG MÀU TRẮNG */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Thêm đổ bóng cho rõ chữ */
+        }
+
+        .brand-title h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffffff; /* <--- ĐỔI TỪ #000000 SANG #ffffff ĐỂ DÒNG PHỤ SANG MÀU TRẮNG */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Thêm đổ bóng cho rõ chữ */
+        }
+
+        .btn-contact-wrapper {
+            display: table-cell;
+            vertical-align: top;
+            text-align: right;
+        }
+
+        .btn-contact {
+            display: inline-block;
+            background-color: #eb4d4b; /* Coral/Red button color from image */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        /* Main Content Layout using Table for layout consistency */
+        .main-layout {
+            display: table;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .left-column {
+            display: table-cell;
+            width: 38%;
+            vertical-align: top;
+            padding-right: 30px;
+        }
+
+        .middle-column {
+            display: table-cell;
+            width: 32%;
+            vertical-align: top;
+            padding-right: 20px;
+        }
+
+        .right-column {
+            display: table-cell;
+            width: 30%;
+            vertical-align: top;
+        }
+
+        /* Description text style - ĐÃ ĐỔI SANG MÀU TRẮNG VÀ THÊM ĐỔ BÓNG ĐỂ DỄ ĐỌC */
+        .description-text {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            text-align: justify;
+            color: #ffffff; /* <--- ĐÂY CHÍNH LÀ CHỖ THAY MÀU CHỮ */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
+        }
+
+        /* Thumbnail Grid in Left Column */
+        .thumbnail-grid {
+            display: table;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 10px;
+        }
+
+        .grid-row {
+            display: table-row;
+        }
+
+        .grid-cell {
+            display: table-cell;
+            width: 50%;
+        }
+
+        .grid-cell img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Middle Column Images */
+        .mid-image-box {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .mid-image-box img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .mid-img-1 {
+            height: 220px;
+        }
+
+        .mid-img-2 {
+            height: 220px;
+        }
+
+        /* Right Column Image */
+        .right-image-box img {
+            width: 100%;
+            height: 455px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Responsive styling for smaller viewports */
+        @media (max-width: 768px) {
+            .left-column, .middle-column, .right-column, .brand-title, .btn-contact-wrapper {
+                display: block;
+                width: 100% !important;
+                padding-right: 0;
+                text-align: left;
+                margin-bottom: 20px;
+            }
+            .btn-contact-wrapper {
+                text-align: left;
+            }
+            .right-image-box img {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header Section with Titles and Button -->
+        <div class="header-section">
+            <div class="brand-title">
+                <h1>Tiệm Nail & Spa</h1>
+                <h2>Chăm sóc móng và gội đầu thảo dược</h2>
+            </div>
+            <div class="btn-contact-wrapper">
+                <a href="tel:0900000000" class="btn-contact">Liên hệ chúng tôi</a>
+            </div>
+        </div>
+
+        <!-- Main Layout with Three Columns matching the layout in image -->
+        <div class="main-layout">
+            
+            <!-- Left Column: Intro text and 4 grid images -->
+            <div class="left-column">
+                <div class="description-text">
+                    Kính chào quý khách đến với Nail & Spa chúng tôi.<br>
+                    Tại đây bạn sẽ được thả lỏng với những kỹ thuật mát-xa cùng với sự thư giãn khi gội đầu thảo dược. Liên hệ đặt lịch ngay
+                </div>
+                
+                <div class="thumbnail-grid">
+                    <div class="grid-row">
+                        <div class="grid-cell">
+                            <!-- Placeholder for top left thumbnail -->
+                            <img src="anh1.png" alt="Nail 1">
+                        </div>
+                        <div class="grid-cell">
+                            <!-- Placeholder for top right thumbnail -->
+                            <img src="anh2.png" alt="Foot Care">
+                        </div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-cell">
+                            <!-- Placeholder for bottom left thumbnail -->
+                            <img src="anh3.png" alt="Nail Art 1">
+                        </div>
+                        <div class="grid-cell">
+                            <!-- Placeholder for bottom right thumbnail -->
+                            <img src="goidau1.png" alt="Nail Art 2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Column: 2 Stacked Images -->
+            <div class="middle-column">
+                <div class="mid-image-box">
+                    <!-- Placeholder for Top Center Image (Herbs/Oils) -->
+                    <img src="goidau3.png" class="mid-img-1" alt="Thảo dược">
+                </div>
+                <div class="mid-image-box">
+                    <!-- Placeholder for Bottom Center Image (Scalp Massage) -->
+                    <img src="goidau2.png" class="mid-img-2" alt="Mát xa đầu">
+                </div>
+            </div>
+
+            <!-- Right Column: 1 Vertical Full-height Image -->
+            <div class="right-column">
+                <div class="right-image-box">
+                    <!-- Placeholder for Right Image (Hair Washing Bed) -->
+                    <img src="goidau4.png" alt="Gội đầu dưỡng sinh">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sửa Chữa Điện Tử Bạc Liêu</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .wrapper-page {
+            width: 100%;
+            height: 100vh;
+            background-image: url('dien_tu.jpg');
+            background-size: cover;
+            background-position: right center;
+            display: flex;
+            position: relative;
+        }
+
+        .content-yellow-zone {
+            width: 52%; 
+            background-color: #fce253;
+            height: 100%;
+            padding: 40px 40px 40px 10%; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            border-bottom-right-radius: 260px; 
+            z-index: 2;
+        }
+
+        .header-tag {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #222;
+            margin-bottom: 20px;
+            align-self: center; 
+            text-transform: uppercase;
+        }
+
+        .brand-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 25px;
+            align-self: center; 
+        }
+
+        .service-heading {
+            font-size: 38px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 25px;
+        }
+
+        .intro-text {
+            font-size: 21px;
+            line-height: 1.5;
+            color: #111;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .list-items {
+            list-style-type: disc;
+            padding-left: 30px;
+            margin-bottom: 40px;
+        }
+
+        .list-items li {
+            font-size: 22px;
+            line-height: 1.6;
+            color: #000;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .actions-area {
+            display: flex;
+            gap: 25px;
+            width: 100%;
+            margin-bottom: 25px; /* Tạo khoảng cách dưới nút bấm */
+        }
+
+        .btn {
+            padding: 14px 35px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .btn-call {
+            background-color: #ff2d2d;
+            color: white;
+        }
+
+        .btn-price {
+            background-color: #4354ff;
+            color: white;
+            border: 1px solid #1a2fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+        }
+
+        /* ĐÃ CẬP NHẬT: Định dạng lại link nhận học viên nằm dưới nút */
+        .training-link {
+            color: #2b46ff;
+            font-size: 20px;
+            font-style: italic;
+            text-decoration: underline;
+            font-weight: bold;
+            margin-top: 10px;
+            align-self: flex-start; /* Căn lề trái theo nội dung danh sách phía trên */
+        }
+
+        @media (max-width: 992px) {
+            .wrapper-page {
+                flex-direction: column;
+                height: auto;
+                background-position: center bottom;
+            }
+            .content-yellow-zone {
+                width: 100%;
+                height: auto;
+                padding: 60px 30px 40px 30px;
+                border-bottom-right-radius: 0; 
+            }
+            .brand-title {
+                font-size: 46px;
+            }
+            .service-heading {
+                font-size: 28px;
+            }
+            .actions-area {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .training-link {
+                font-size: 18px;
+            }
+            .wrapper-page::after {
+                content: "";
+                display: block;
+                height: 350px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper-page">
+        <div class="content-yellow-zone">
+            <span class="header-tag">Sửa chữa điện tử Bạc Liêu</span>
+            <h1 class="brand-title">Điện tử Gia Dụng</h1>
+            <h2 class="service-heading">Dịch vụ sửa chữa tận nhà</h2>
+            
+            <p class="intro-text">Với kinh nghiệm nhiều năm chúng tôi chuyên sửa các thiết bị gia dụng như:</p>
+            <ul class="list-items">
+                <li>Tivi</li>
+                <li>Tủ lạnh</li>
+                <li>Máy lạnh - Máy giặt</li>
+                <li>Lò vi sóng - Bếp từ</li>
+                <li>...</li>
+            </ul>
+
+            <div class="actions-area">
+                <a href="tel:0803xxxxxx" class="btn btn-call">Liên hệ: 0803-xxx-xxx</a>
+                <a href="#" class="btn btn-price">Nhận báo giá</a>
+            </div>
+
+            <a href="#" class="training-link">Có nhận đào tạo học viên</a>
+        </div>
+    </div>
+
+</body>
+</html>
